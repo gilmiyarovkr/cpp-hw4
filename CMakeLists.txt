@@ -12,7 +12,7 @@ set(PROJECT_VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PATCH_VE
 
 #----------------------------------------------------------------------------
 # Опции сборки
-option(WITH_GOOGLE_TEST "Build GoogleTest tests" OFF)
+option(WITH_GOOGLE_TEST "Build GoogleTest tests" ON)
 option(ENABLE_CCACHE "Enable CCACHE for building" OFF)
 
 if(WITH_GOOGLE_TEST)
@@ -35,9 +35,9 @@ endif()
 # Подключаем папки с исходным кодом и тестами
 add_subdirectory(library)
 add_subdirectory(app)
-# if(WITH_GOOGLE_TEST)
-    # add_subdirectory(tests)
-# endif()
+if(WITH_GOOGLE_TEST)
+    add_subdirectory(tests)
+endif()
 
 #----------------------------------------------------------------------------
 # Подключение модуля упаковки в DEB

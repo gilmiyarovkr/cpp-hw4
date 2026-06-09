@@ -31,7 +31,9 @@ jobs:
 
       # Doxyfile из Doxyfile.in
       - name: Configure CMake
-        run: cmake -B build -DBUILD_DOCS=OFF
+        run: cmake -B build \
+              -DPATCH_VERSION=${{ github.run_number }} \
+              -DBUILD_DOCS=OFF
 
       - name: Run Doxygen via CMake
         run: cmake --build build --target doc

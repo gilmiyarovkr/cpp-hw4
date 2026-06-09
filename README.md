@@ -1,2 +1,2 @@
-# cpp-hw4
+# Главная страница {#mainpage}
 SFINAE + Doxygen

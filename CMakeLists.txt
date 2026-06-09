@@ -14,6 +14,7 @@ set(PROJECT_VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PATCH_VE
 # Опции сборки
 option(WITH_GOOGLE_TEST "Build GoogleTest tests" ON)
 option(ENABLE_CCACHE "Enable CCACHE for building" OFF)
+option(BUILD_DOCS "Enable docs generation" ON)
 
 if(WITH_GOOGLE_TEST)
     enable_testing()
@@ -38,6 +39,10 @@ add_subdirectory(app)
 if(WITH_GOOGLE_TEST)
     add_subdirectory(tests)
 endif()
+
+#----------------------------------------------------------------------------
+# Подключаем модуль Doxygen
+include(cmake/Doxygen.cmake)
 
 #----------------------------------------------------------------------------
 # Подключение модуля упаковки в DEB

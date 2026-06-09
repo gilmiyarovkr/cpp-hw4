@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       # Клонирование
@@ -48,3 +48,8 @@ jobs:
           files: build/*.deb
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+  trigger-documentation:
+    needs: build-and-test
+    uses: ./.github/workflows/docs.yml
+    secrets: inherit # Передает системные токены для безопасного деплоя

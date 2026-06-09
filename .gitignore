@@ -70,3 +70,6 @@ Testing/
 
 # users
 *.user*
+
+# doxygen directories
+docs/

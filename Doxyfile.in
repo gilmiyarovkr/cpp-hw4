@@ -1,0 +1,24 @@
+# Имя проекта берется из CMake
+PROJECT_NAME           = "@PROJECT_NAME@"
+
+# Версия проекта берется из CMake
+PROJECT_NUMBER         = "@PROJECT_VERSION@"
+
+# Опции
+HAVE_DOT               = YES
+EXTRACT_ALL            = YES
+RECURSIVE              = YES
+USE_MDFILE_AS_MAINPAGE = README.md
+MARKDOWN_SUPPORT       = YES
+
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+FULL_SIDEBAR           = NO
+
+OUTPUT_LANGUAGE        = Russian
+
+# Настройки путей
+EXCLUDE                = build tests
+OUTPUT_DIRECTORY       = docs
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
